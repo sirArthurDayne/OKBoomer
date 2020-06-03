@@ -1,0 +1,13 @@
+.content{
+    margin: auto;
+    max-width: 80%;
+    width: 70%;
+}
+
+.content .tablas{
+    background-color: white;
+}
+
+.content .tablas img{
+    width: 70%;
+}

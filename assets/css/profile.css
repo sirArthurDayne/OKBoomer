@@ -1,0 +1,68 @@
+/*
+.profile{
+    margin: auto;
+    max-width: 80%;
+    width: 70%;
+    background-color: white;
+    margin-top: 2em;
+}
+*/
+.profile{
+    max-width: 100%;
+    background-color: white;
+    display: block;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border-radius: 1em;
+}
+.profile-content{
+    max-width: 100%;
+    background-color: white;
+    display: block;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border-radius: 0.5em;
+}
+.profile .user-card{
+    position: relative;
+}
+
+.profile .user-card img{
+    margin: 0;
+    width: fit-content;
+	height: auto;
+    display: block;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.username{
+    text-align: right;
+    padding: 1em;
+}
+
+.profile .mision{
+    background-color: white;
+    display: block;
+    padding: 1em;
+}
+
+.profile-content{
+    max-width: 80%;
+    width: 70%;
+}
+
+.profile-content .tabla{
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+.profile-content .tabla img{
+    width: 70%;
+}

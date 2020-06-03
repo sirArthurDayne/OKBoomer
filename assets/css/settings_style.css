@@ -1,0 +1,154 @@
+
+
+.main_logo{
+    width: 25px;
+    height: 25px;
+    float:left;
+    align-items: center;
+    padding: 2px;
+}
+
+.main-settings_container{
+    width: 1000px;
+    height: 700px;
+    min-height: 480px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.main-settings_container h1{
+    width: 30%;
+    font-size: 35px;
+    text-align: center;
+    color: #553044;
+    text-transform: uppercase;/*cambia el texto a minusculas*/
+}
+
+
+
+.navbar_container{
+    width: 20%;
+    height:94%;
+    float:left;
+}
+
+.navbar{
+    margin-top: 70%;
+    margin-left:20%;
+    list-style: none;
+    font-weight: 600;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 15%;
+    background: black;
+}
+
+
+.navbar li{
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.menu{
+    background-color: black;
+}
+
+.menu .icon{
+    text-align: center;
+}
+
+.elmenu {
+    position: fixed;
+    border-radius: 50%;
+}
+
+
+
+.settings-option_container{
+    float:left;
+    width: 20%;
+    height: 100%;
+}
+
+.settings-option_container li{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.settings-option_container a{
+    font-size: 16px;
+    text-decoration-line: none;
+    text-align: center;
+    font-weight: 600;
+    color:white;
+    cursor: pointer;
+}
+
+
+.settings_info_container{
+    z-index: 2;
+    float: left;
+    width: 60%;
+    height: 80%;
+    padding: 20px 30px 0;
+}
+
+.settings_info_container h2{
+    font-size:20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #553044;
+}
+
+
+.settings_info_container button{
+    display: block;
+    cursor:pointer;/*cuando este enciama el mouse cambia el puntero*/
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;/*lo deja en el medio de los demas textos*/
+    border-radius: 30px;/*redondear border >*/
+    color: #ffffff;
+    font-size:17px;
+    border-bottom: 1px solid #3f3145;
+}
+
+.settings_info_container input{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size:15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #3f3145;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.settings_info_container label{
+    display: block;
+    width: 50%;
+    height: 10%;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.settings_info_container span{
+    font-size:15px;
+    font-weight: 600;
+    color: #553044;
+    text-transform: uppercase;
+}
+
+
+.settings_info_container .profile_picture{
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 35%;
+    background-size: cover;
+    align-items: center;
+}
