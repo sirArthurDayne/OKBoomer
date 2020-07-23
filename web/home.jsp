@@ -29,6 +29,7 @@
                     try{
                         for(Post post: posts){%>
                             <div class="grid_layout-item small show_image" onclick="modal_show(this)" id="meme" style="--image_url:url(<%= post.getImage() %>);">
+                                <!-- Todos los elementos hidden son para el modal. -->
                                 <img hidden id="myImg" src="<%= post.getImage() %>" />
                                 <div class="image-overlay"><span><%= post.getTitle() %></span></div>
                                 <p hidden><%= post.getDescription() %></p>
@@ -69,6 +70,7 @@
             }
         }
         
+        //Size de los items del grid variable con uso de un dado simple.
         meme_element = document.getElementById('meme');
         size_dice = Math.floor((Math.random() * 6) + 1);
         if (size_dice <= 2){
