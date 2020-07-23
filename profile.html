@@ -4,32 +4,56 @@
     <meta charset="utf-8" />
     <title>Ok Boomer</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/profile.css">
     <link rel="stylesheet" href="assets/css/categories.css">
 </head>
     <body>
-        <div class="container">  
-            <header>
-                <div class="titulo">
-                    <h2><img src="http://u.cubeupload.com/ivanrl73/likesao.png" width="30" />   Ok Boomer</h2>
-                </div>
-            </header>
-        </div>
-        <nav class="elmenu">
-            <ul class="menu">
-                <li><a class="icon" href="home.html"><img src="http://u.cubeupload.com/ivanrl73/Casita.png" width="30" /></a></li>
-                <li><a class="icon" href="#"><img src="http://u.cubeupload.com/ivanrl73/lupa.png" width="30" /></a></li>
-                <li><a class="icon" href="categorias.html"><img src="http://u.cubeupload.com/ivanrl73/brujulablanca.png" width="25" /></a></li>
-                <li><a class="icon" href="profile.html"><img src="http://u.cubeupload.com/ivanrl73/usuario.png" width="20" /></a></li>
-                <li><a class="icon" href="notificaciones.html"><img src="http://u.cubeupload.com/ivanrl73/tuerca.png" width="25"/></a></li>
+          <!--el nav ocupa mucho espacio!-->
+   
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="logo">
+                    <a href="#" class="navbar-link">
+                        <span class="link-text">OK Boomer</span>
+                        <img class="icon" src="http://u.cubeupload.com/ivanrl73/likesao.png" />
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="home.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/Casita.png"/>
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="#"><img class="icon" src="http://u.cubeupload.com/ivanrl73/lupa.png"  />
+                        <span class="link-text">Buscar</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="categorias.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/brujulablanca.png"  />
+                        <span class="link-text">Categorias</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="notificaciones.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/tuerca.png" />
+                        <span class="link-text">Notificaciones</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="profile.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/usuario.png" />
+                        <span class="link-text">Perfil</span>
+                    </a>
+                </li>
             </ul>
-        </nav>
+               </nav>
+       <div class="container">
         <div class="profile">
             <div class="user-card">
-                <img src="logos/user.svg" alt="">
+              <img src="logos/user.svg" class="rounded" alt="Cinque Terre">
+                <!--esto se quedo pegao con el del contenido del profile!-->
                 <div class="mision">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia veritatis odit dicta voluptates illo sapiente itaque pariatur incidunt, doloribus mollitia quis. Aperiam odio iure error! Quaerat quasi sapiente quo cum?</p>
+                    <p>Seguidos:1005</p><br>
+                    <p>Seguidores:100</p><br>
+                    <p>Publicaciones:4</p>
                 </div>
                 <div class="username">
                     @anon507
@@ -37,22 +61,50 @@
             </div>
         </div>
         <div class="profile-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, totam labore illum excepturi sequi libero? Soluta eius vero sit perferendis omnis inventore quibusdam quis, voluptatem dolorem assumenda fuga repellat molestias!</p>
-            <table class="tabla">
-                <tr>
-                    <td><img src="http://u.cubeupload.com/ivanrl73/8f8WhatsAppImage2020053.jpeg"  /></td>
-
-                    <td><img src="http://u.cubeupload.com/ivanrl73/626WhatsAppImage2020053.jpeg"  /></td>
-
-                    <td><img src="http://u.cubeupload.com/ivanrl73/e8dWhatsAppImage2020053.jpeg"  /></td>
-
-                    <td><img src="http://u.cubeupload.com/ivanrl73/459WhatsAppImage2020053.jpeg"  /></td>
-
-                    <td><img src="http://u.cubeupload.com/ivanrl73/771WhatsAppImage2020053.jpeg"  /></td>
-
-                    <td><img src="http://u.cubeupload.com/ivanrl73/WhatsAppImage2020053.jpeg"  /></td>
-                </tr>
-            </table>
+            <div class="grid-container">
+  <div class="grid-item"><img src="http://u.cubeupload.com/ivanrl73/8f8WhatsAppImage2020053.jpeg" width='200' height='220'>
+ <p display=inline-block><img src="https://imgur.com/HAfNoJo.png" /></p><p display=inline-block><img src="https://imgur.com/E7NzaDh.png"/></p> </div>
+  <div class="grid-item"><img src="http://u.cubeupload.com/ivanrl73/626WhatsAppImage2020053.jpeg"  width='200' height='220'/>
+    <p display=inline-block><img src="https://imgur.com/HAfNoJo.png" /></p><p display=inline-block><img src="https://imgur.com/E7NzaDh.png"/></p></div>
+  <div class="grid-item"><img src="http://u.cubeupload.com/ivanrl73/e8dWhatsAppImage2020053.jpeg"  width='200' height='220'/>
+    <p display=inline-block><img src="https://imgur.com/HAfNoJo.png" /></p><p display=inline-block><img src="https://imgur.com/E7NzaDh.png"/></p></div>  
+  <div class="grid-item"> <img src="http://u.cubeupload.com/ivanrl73/459WhatsAppImage2020053.jpeg"    width='200' height='220' />
+    <p display=inline-block><img src="https://imgur.com/HAfNoJo.png" /></p><p display=inline-block><img src="https://imgur.com/E7NzaDh.png"/></p>
+      </div>
+     
+    </div>
+       </div>     
+  </div><br><br>
+        <footer class="footer">
+        <div class="footer-left">
+            <h2>Sobre nosotros</h2>
+            <p>Hecho con amor por:</p>
+            <ul>
+                <li>Alejandro De Puy</li>
+                <li>John Kent</li>
+                <li>Xavier Lamela</li>
+                <li>Iván Ramirez</li>
+                <li>Enrique Flores</li>
+                <li>Carolina López</li>
+            </ul>
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, Ok Boomer </p>
         </div>
+       <div class="footer-middle">
+            <h2>Dirección</h2>
+            <p>Utp, Panama</p>
+            <p>+507-3283-2341</p>
+            <p>team_location@okboomer.com</p>
+        </div>
+        <div class="footer-right">
+            <h2>Contáctenos</h2>
+            <form action="#">
+                <span>email</span>
+                <input type="email" name="" id="">
+                <span>mensaje</span>
+                <textarea name="" id="" cols="25" rows="2"></textarea>
+                <button type="submit">enviar</button>
+            </form>
+        </div>
+    </footer>
     </body>
 </html>

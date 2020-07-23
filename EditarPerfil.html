@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ok Boomer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap" rel="stylesheet">
+    <link href="assets/css/Editar perdil.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/home.css" rel="stylesheet" type="text/css"/>
+</head>
+    <body>
+         <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="logo">
+                    <a href="#" class="navbar-link">
+                        <span class="link-text">OK Boomer</span>
+                        <img class="icon" src="http://u.cubeupload.com/ivanrl73/likesao.png" />
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="home.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/Casita.png"/>
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="#"><img class="icon" src="http://u.cubeupload.com/ivanrl73/lupa.png"  />
+                        <span class="link-text">Buscar</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="categorias.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/brujulablanca.png"  />
+                        <span class="link-text">Categorias</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="notificaciones.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/tuerca.png" />
+                        <span class="link-text">Notificaciones</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="profile.html"><img class="icon" src="http://u.cubeupload.com/ivanrl73/usuario.png" />
+                        <span class="link-text">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+               </nav>
+        <div class="container">  
+            <div class="opci">
+                <div class="opciones">
+                    <button type="button" class="btn btn-secondary"> Editar Perfil</button><br>
+                    <button type="button" class="btn btn-secondary">Contraseña</button><br>
+                    <button type="button" class="btn btn-secondary">Notificaciones</button><br>
+                    <button type="button" class="btn btn-secondary">Privacidad y Seguridad</button><br>
+                    <form method="get" action="Acerca.html"> 
+                         <button  class="btn btn-secondary" >Acerca de Nosotros</button><br>
+                    </form>
+                   
+                </div>
+            </div>
+
+            <div class="opcinot">
+                <div class="confinot">
+                    <h3>Cambiar foto de Perfil y Informacion Personal</h3>
+                 <label>
+                    <input type="file" name="avatar" id="avatar_file"  accept="image/gif, image/jpeg, image/png" />
+                    <div class="image_preview" id="img_preview">
+                        <img  class="img_preview_image" id="avatar_img" alt="">
+                    </div>
+                </label>
+                        <form method="get">
+                           <label for="fname">First name:</label><br>
+                            <input type="text" id="fname" name="fname" placeholder="Jose"><br>
+                            <label for="lname">Last name:</label><br>
+                            <input type="text" id="lname" name="lname"placeholder="Carmago"><br>
+                            <label for="lname">Bio:</label><br>
+                            <input type="text" id="bio" name="bio"placeholder="quick description">
+                        </form>
+                        <h3>Informacion del perfil</h3>
+                        <form method="get">
+                          <label for="fname">Email:</label><br>
+                            <input type="text" id="fname" name="fname" placeholder="anashow@gmail.com"><br>
+                            <label for="fname">password:</label><br>
+                            <input type="text" id="fname" name="fname" placeholder="*********"><br>
+                            <h4>Confirm password</h4>
+                            <label for="fname">Password:</label><br>
+                            <input type="text" id="fname" name="fname" placeholder="*******"><br>
+                        </form>
+                        <h3>Numero de Telefono</h3>
+                        <form method="get">
+                            <label for="fname">Phone:</label><br>
+                            <input type="text" id="fname" name="fname" placeholder="+507 6895-2596"><br>
+                        </form>
+                        <h3>Sexo</h3>
+                        <form method="get">
+                            <input name="solic" type="radio" value="desact" />Hombre
+                            <br />
+                            <input name="solic" type="radio" value="activ" />Mujer
+                            <br />
+                            <input name="solic" type="radio" value="activ" />Indefinido
+                        </form>
+                    </p>
+                    <form method="get" action="profile.html">
+                         <button class="boton">Cancelar</button> <button  class="boton">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div> <br><br>
+          <footer class="footer">
+        <div class="footer-left">
+            <h2>Sobre nosotros</h2>
+            <p>Hecho con amor por:</p>
+            <ul>
+                <li>Alejandro De Puy</li>
+                <li>John Kent</li>
+                <li>Xavier Lamela</li>
+                <li>Iván Ramirez</li>
+                <li>Enrique Flores</li>
+                <li>Carolina López</li>
+            </ul>
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, Ok Boomer </p>
+        </div>
+       <div class="footer-middle">
+            <h2>Dirección</h2>
+            <p>Utp, Panama</p>
+            <p>+507-3283-2341</p>
+            <p>team_location@okboomer.com</p>
+        </div>
+        <div class="footer-right">
+            <h2>Contáctenos</h2>
+            <form action="#">
+                <span>email</span>
+                <input type="email" name="" id="">
+                <span>mensaje</span>
+                <textarea name="" id="" cols="25" rows="2"></textarea>
+                <button type="submit">enviar</button>
+            </form>
+        </div>
+    </footer>
+    </body>
+</html>
