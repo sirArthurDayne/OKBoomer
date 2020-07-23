@@ -1,0 +1,157 @@
+*, *:before, *:after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100%;
+	height: 100vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background: -webkit-linear-gradient(right,#973045,#0a3045);
+}
+.twin-column input{
+	border-radius: 10px;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+	display:block;
+	padding: 5px 20px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 900;
+	font: size 50px;
+	margin: 4px 2px;
+	border-radius: 50px 50px 50px 50px;
+	float:right;
+
+}
+.cont{
+	overflow:scroll;
+	position: relative;
+	width: 900px;
+	height:550px;
+	background: #ffffff;
+
+}
+.boomer{
+	float: left;
+	margin: 0;
+	padding:12px;
+}
+.titulo h1{
+
+	font-size:150%;
+	font-family:'Montserrat', sans-serif;
+	padding-right: 2px;
+	padding-top: 15px;
+
+}
+.foto{
+	padding-left: 200px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+}
+.vl{
+	padding-left: 75px;
+}
+.vl ul{
+	list-style: none;
+	color: black;
+	background-color:gray;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 20px;	
+	border-radius: 40px 40px 40px 40px;
+	float: none;
+}
+.vl li{
+	padding-bottom: .5px;
+}
+.main-center { 
+	margin-left: auto;
+	margin-right: auto;
+}
+.twin-column {
+	display: block;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	font-size:100%;
+}
+.twin-column .nombre article, p{
+	justify-content: stretch;
+	padding-left: 80px;
+}
+.twin-column .seguidores article,a{
+	margin: auto;
+	padding: auto;
+	float: right;
+}
+.twin-column .comentario textarea{
+	width: 55%;
+	height: 90px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	resize: none;
+	float: right;
+}
+.meme{
+	width:100%;
+	float: right;
+	align-content: center;
+	padding-left: 200px;
+}
+.meme .mem1{	
+	overflow: hidden;
+	z-index: 2;
+	position: relative;
+	padding: 25px;
+	padding-bottom: 25px;
+	width:fit-content;
+}
+.meme .mem2{
+	overflow: hidden;
+	z-index: 3;
+	position: relative;
+	padding: 28px;
+	padding-bottom: 25px;
+	width: fit-content;
+	float: right;
+}
+
+.me1 li{
+	list-style: none;
+	color: black;
+	background-color:gray;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 20px;	
+	border-radius: 40px 40px 40px 40px;
+}
+.me2{
+	padding-left:300px;
+}
+.me2 li{
+
+	list-style: none;
+	color: black;
+	background-color:gray;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;	
+	padding: 5px 20px;
+	border-radius: 40px 40px 40px 40px;
+	float: left;
+}
+
+
+
+
+
+

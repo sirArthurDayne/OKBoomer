@@ -1,0 +1,288 @@
+/*
+    CODIGO DE COLORES PARA EL PROYECTO:
+    
+     HEX        RGB
+    #0a3045  rgb(10,48,69)
+    #323045  rgb(50,48,69)
+    #553044  rgb(85,48,68)
+    #973045  rgb(151,48,69)
+    #3f3145  rgb(63,49,69)
+
+
+    //otros colores 
+    #d54306  rgb(213,67,6)
+    #71b0b2  rgb(113,176,178)
+    #004773  rgb(0,71,115)
+*/
+
+/*DISENO BASE*/
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;/*vh: view height*/
+    display: flex;
+    flex-direction: column;/**/
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;/*define la alineacion dentro de un flexible container*/
+    background: -webkit-linear-gradient(right,#973045, #0a3045);/*gradiente entre 2 colores*/
+}
+
+input{
+    outline: none;
+    border: none;
+    background: none;
+}
+
+button{
+    outline: none;
+    border: none;
+    background: none;
+    transition: transform 80ms ease-in;
+}
+
+button:active{
+    transform: scale(0.80);
+}
+
+button:disabled{
+    opacity: 0.4;
+}
+
+.main_container{
+    overflow: hidden;/*si el contenido se sale de las dimensiones, no sera visible, try auto*/
+    position: relative;
+    width: 900px;/*dimensiones del canvas*/
+    height: 550px;
+    max-width: 100%;
+    min-height: 480px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.form_container{
+    position: absolute;/*por defecto en hiddem*/
+    width: 640px;
+    height: 100%;
+    padding: 50px 30px 0;
+}
+
+.form_container h2{
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    color: #553044;
+    text-transform: uppercase;/*cambia el texto a minusculas*/
+    
+}
+
+.form_container input{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size:15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #3f3145;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form_container label{
+    display: block;
+    width: 240px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.form_container label span{
+    font-size:15px;
+    font-weight: 600;
+    color: #553044;
+    text-transform: uppercase;
+}
+
+.form_container a{
+    font-size: 12px;
+    text-decoration-line: none;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    color:#3f3145;
+    cursor: pointer;
+}
+
+.form_container select{
+    font-family: 'Montserrat', sans-serif;
+    color:-webkit-linear-gradient(right,#973045, #0a3045);
+    cursor: pointer;
+    font-weight: 600;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+}
+
+.form_container button{
+    display: block;
+    cursor:pointer;/*cuando este enciama el mouse cambia el puntero*/
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;/*lo deja en el medio de los demas textos*/
+    border-radius: 30px;/*redondear border >*/
+    color: #ffffff;
+    font-size:17px;
+    border-bottom: 1px solid #3f3145;
+}
+
+
+.submit{
+    margin-top: 40px;
+    margin-bottom: 300px;
+    font-weight: 600;
+    text-transform:uppercase;
+    font-family: 'Montserrat', sans-serif;
+    background: -webkit-linear-gradient(top,#973045, #0a3045);
+}
+
+.submit:hover{
+    background: -webkit-linear-gradient(bottom,#973045, #0a3045);
+}
+
+/*CLASES PARA REDES SOCIALES*/
+.social_media{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;/*left*/
+}
+
+.social_media ul{
+    list-style: none;/*elimina cualquier estilo*/
+}
+
+.social_media ul li{
+    display: inline-block;
+    cursor: pointer;
+    margin: 25px 20px;/*1px 5px*/
+}
+
+.social_media img{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+/*CLASES DEL SIGNIN*/
+.sign_in{
+    z-index: 1;
+    opacity: 1;
+    overflow: hidden;
+}
+/*CLASES DEL SIGNUP*/
+
+
+.sign_up{
+    z-index: 0;
+    opacity: 0;
+   overflow: scroll;
+}
+
+/*LADO DERECHO 'OVERlAY'*/
+.overlay_container{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left:640px;/*mueve el sub_content*/
+    width: 50%;/*width of login*/
+    height: 100%;   
+    padding-left: 0px;/*aleja el texto de formulario a la izquierda*/
+    background:#973045;
+}
+
+.bg_container{
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:260px;
+    height: 100%;
+    padding-top:200px; /*baja el texto*/
+}
+
+.bg_container::before{
+    content:'';
+    position: absolute;
+    right:0;
+    top:0;
+    width: 900px;/*max size*/
+    height: 100%;
+    background-size: cover;
+    /*si quieres poner imagen
+    background-image: url();
+    */
+}
+
+.bg_container::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    width: 100%;
+}
+
+.overlay_text{
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top:100px;
+    width: 100%;
+    height: 200px;
+    padding: 0 20px;
+    text-align: center;
+    color: #ffff;
+}
+
+
+.overlay_text h2{
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.overlay_text p{
+    font-size: 15px;
+}
+
+
+
+.overlay_container button{
+    display: block;
+    cursor:pointer;/*cuando este enciama el mouse cambia el puntero*/
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;/*lo deja en el medio de los demas textos*/
+    border-radius: 30px;/*redondear border >*/
+    color: #ffffff;
+    font-size:17px;
+    border-bottom: 1px solid #3f3145;
+}
+
+
+.image_text_logo{
+    position: absolute;
+    left:0;
+    top: 350px;
+    width: 100%;
+}
+
+.image_text_logo img{
+    width: 40px;
+    height: 40px;
+}
+
+
