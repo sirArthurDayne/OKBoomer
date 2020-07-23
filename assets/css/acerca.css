@@ -219,47 +219,39 @@
 }
 
 
-.opci {
-    position: absolute;
-    margin-top: 95px;
-    margin-left: 95px;
-    background-color: transparent;
-    border-width: thin;  
-}
 
-.opciones{
-   padding: 15px;
-   margin: 5px;
-   border-color: white;
-   border-width:thick;
-   background-color:transparent;
-   color: white;
-   
-}
-.opciones button{
-    display: block;
-    background-color:WindowFrame;
-    color:white;
-    position:center;
-     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-style: 'Montserrat', sans-serif:
-    
-    
-}
 
-.opcinot {
+.acerca {
     position: absolute;
     margin-top: 10px;
-    margin-left: 300px;
-    background-color: WindowFrame;
+    margin-left: 100px;
+    background-color: transparent;
     
 }
 
-.confinot {
+.acercanot  {
     padding: 15px;
     margin: 5px;
-    background-color: WindowFrame;
+    background-color: transparent;
+       
+}
+.acercanot h1 {
+    color:white;
+     font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    
+}
+.acercanot h3 {
+    color:white;
+     font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    
+}
+.acercanot p,h6,a{
+    color:white;
+     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    
 }
 
 .boton {
