@@ -1,0 +1,130 @@
+
+.navbar{
+    /* width: 5rem; */
+    /* height: 100vh; */
+    position: fixed;
+    background-color: #3f3145;
+    transition: width 200ms ease;
+    z-index: 3;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-items:center;
+    list-style: none;
+    height: 100%;
+}
+
+.navbar-item{
+    width: 100%;
+}
+
+.navbar-item:last-child{
+    margin-top: auto;
+}
+
+.navbar-link{
+    display: flex;
+    align-items: center;
+    justify-items:center;
+    height: 5rem;
+    color:gray;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.6);
+    transition: 600ms;
+}
+
+.navbar-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: #973045;
+    color: #FFFFFF;
+}
+
+.navbar-link img {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+}
+
+.icon{
+    height: 50px;
+    transform: scale(1.0);
+    transition: transform 200ms;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-items:center;
+    width:100%;
+    height: 7rem;
+    margin-bottom: 1rem;
+    background: #973045;
+}
+
+.logo img{
+    transform: rotate(0deg) scale(1);
+    transition: transform 400ms;
+}
+
+.navbar:hover .icon{
+    transform: scale(1.25);
+}
+
+.navbar:hover .logo img{
+    transform: rotate(-360deg) scale(1.5);
+}
+
+/*clase base para el contenido a la derecha de la navbar*/
+.main_content{
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    padding: 3rem;
+    flex: 1 1 80%;
+    height:100vh;
+}
+
+/* navbar responsive PC*/
+@media only screen and (min-width: 600px){
+    .navbar{
+        top:0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover{
+        width:15rem;
+    }
+    .navbar:hover .link-text{
+        display: inline;
+        transition: opacity 200ms;
+    }
+
+}
+
+/* navbar responsive moviles*/
+@media only screen and (max-width: 600px){
+    .navbar{
+        bottom:0;
+        width:100vw;
+        height: 5rem;
+    }
+    .logo{
+        display: none;
+    }
+    .navbar-nav{
+        flex-direction: row;
+    }
+    .navbar-link{
+        justify-content:center;
+    }
+    .main_content{
+        margin:0;
+    }
+}

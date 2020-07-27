@@ -12,10 +12,6 @@ backToRegister_buttom.addEventListener("click", function() {
     window.location = "index.html";
 });
 
-Send_buttom.addEventListener("click", function() {
-    window.location = "home.html";
-});
-
 //Permite agregar imagenes 
 avatarFile.addEventListener("change",function() {
     const file = this.files[0];//recupera la imagen

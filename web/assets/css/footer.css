@@ -1,0 +1,68 @@
+/* codigo del footer */
+.footer{
+    display: flex;
+    margin-left: 5rem;
+    padding: 2.5rem;
+    position: relative;
+    bottom: 0;
+    background: #000000;
+    color:#FFFFFF;
+    border-radius:3px;
+    flex-basis: 50%;
+}
+.footer ul{
+    list-style: none;
+}
+
+.footer-left{
+    width:100%;
+}
+
+
+.footer-middle{
+    width:100%;
+}
+
+.footer-right{
+    width:100%;
+}
+
+.footer-buttom {
+    border-style: none;
+    color: #FFFFFF;
+    background-color: #474344;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    margin: 4px 2px;
+    border-radius: 50px;
+}
+
+.footer-textbox{
+    padding: 1vw;
+    border-style: none;
+    color: white;
+    background-color: #474344;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-textarea{
+    width:25vw;
+    height:5vw;
+    padding: 1vw;
+    border-style: none;
+    color: white;
+    background-color: #474344;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea::placeholder{
+    color:white;
+}
+

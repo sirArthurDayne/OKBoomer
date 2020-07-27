@@ -8,8 +8,7 @@ var change_to_login = document.getElementById("change_to_login_buttom");
 var signin_buttom = document.getElementById("sigin_buttom");
 var signup_buttom = document.getElementById("signup_buttom");
 
-
-//funciones de control
+//funciones de control de overlay
 let overlay_to_register = false;
 function DisplayRegisterOverlay()
 {
@@ -52,4 +51,3 @@ function DisplayRegisterOverlay()
 
 //activar el listener para cambia el overlay
 overlay_buttom.addEventListener('click', DisplayRegisterOverlay);
-signup_buttom.addEventListener('click', function(){window.location="add_profile_image.html";} );
