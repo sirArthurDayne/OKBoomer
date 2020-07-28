@@ -6,6 +6,7 @@
 package Procesos;
 
 
+import Entidades.Post;
 import Entidades.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,6 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -39,7 +41,7 @@ public class ProcesosUser {
         int resultado = 0;
         try{
             Statement smtm = conn.createStatement();
-            String query = "INSERT INTO users(nombre,apellido,cosa,animal,ciudad)";
+            String query = "INSERT INTO user(user_name,password,profile_picture)";
                    query += "VALUES('"+user.getUser()+"','"+user.getPassword()+"','"+user.getProfilePic()+"')";
            
             resultado = smtm.executeUpdate(query);
@@ -62,11 +64,11 @@ public class ProcesosUser {
             while(result.next()){
                 User user = new User();
                 
-                user.setUserID(result.getInt("id"));
-                user.setUser(result.getString("nombre"));
-                user.setPassword(result.getString("apellido"));
-                user.setProfilePic(result.getString("cosa"));
-                user.setCreated_At(result.getString("animal"));
+                user.setUserID(result.getInt("user_id"));
+                user.setUser(result.getString("user_name"));
+                user.setPassword(result.getString("password"));
+                user.setProfilePic(result.getString("profile_picture"));
+                user.setCreated_At(result.getString("created_at"));
                 
                 
                 users.add(user);
@@ -82,5 +84,44 @@ public class ProcesosUser {
         }
         return users;
     }
+    
+    public boolean LoginUsuario(String usuario, String password){
+        
+        boolean logged = false; 
+        
+        try{
+            Statement stmt = conn.createStatement();
+            String query = "SELECT * FROM user";
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                User user = new User();
+                
+                user.setUser(result.getString("user_name"));
+                user.setPassword(result.getString("password"));
+                
+                System.out.println("[+] " + user.getUser());
+                System.out.println("[+] " + user.getPassword());
+                
+                if(usuario.equals(user.getUser()) && password.equals(user.getPassword())){
+                    System.out.println("[+] Autentificado. Usuario: " + user.getUser());
+                    logged = true;
+                    result.close();
+                    stmt.close();
+                    conn.close();
+                    return logged;
+                }
+            }
+            result.close();
+            stmt.close();
+            conn.close();
+            
+            return logged;
+        }
+        catch(Exception e){
+            System.out.println("ERROR"+e.getMessage().toString());
+        }
+        return logged;
+    }
+    
     
 }

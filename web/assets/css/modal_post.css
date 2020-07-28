@@ -17,6 +17,7 @@
 
 .modal_post-content{
     background-color: #DFD0BB;
+    border-radius: 50px;
     width: 50%;
     height:40%;
     display:flex;
@@ -40,7 +41,7 @@
     color:#FFFFFF;
     text-transform:uppercase;
     font-family: 'Montserrat', sans-serif;
-    background: -webkit-linear-gradient(top,#973045, #0a3045);
+    background-color: #474344;
     transition: transform 80ms ease-in;
 }
 
@@ -65,4 +66,24 @@
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+.modal_post-textarea{
+    width:25vw;
+    height:5vw;
+    padding: 1vw;
+    border-style: none;
+    color: white;
+    background-color: #474344;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal_post-textbox{
+    padding: 1vw;
+    border-style: none;
+    color: white;
+    background-color: #474344;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
 }

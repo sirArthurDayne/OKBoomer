@@ -39,7 +39,7 @@ public class ProcesosPost {
         int resultado = 0;
         try{
             Statement smtm = conn.createStatement();
-            String query = "INSERT INTO posts(author_id,title,description,image,likes)";
+            String query = "INSERT INTO post(author_id,title,description,image,likes)";
                    query += "VALUES('"+post.getAuthorID()+"','"+post.getTitle()+"','"+post.getDescription()+"','"+post.getImage()+"','"+post.getLikes()+"')";
            
             resultado = smtm.executeUpdate(query);
@@ -52,6 +52,32 @@ public class ProcesosPost {
         
         return 0;
     }
+    
+    public int NuevoPost(Post post, String user_name){
+        int resultado = 0;
+        
+        try{
+            ProcesosPost pPost = new ProcesosPost();
+            Statement stmt = conn.createStatement();
+            String query = "SELECT user_id FROM user where user_name = " + "'" + user_name + "'";
+            ResultSet result = stmt.executeQuery(query);
+        while(result.next()){                
+            //Set user_id inside post object
+            post.setAuthorID(result.getInt("user_id"));
+            resultado = pPost.GuardarPost(post);
+            return resultado;
+        }
+        result.close();
+        stmt.close();
+        conn.close();
+        }
+        catch(Exception w){
+            System.out.println("Error al insertar: " + w);
+        }
+        
+        return resultado;
+    }
+    
     
     public List<Post> ConsultarData(){
         List<Post> posts = new ArrayList<Post>();

@@ -1,0 +1,347 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: -webkit-linear-gradient(right,#973045, #0a3045);/*gradiente entre 2 colores*/
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+
+body::-webkit-scrollbar{
+    width:0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background:#1E1E24;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #0a3045;
+}
+
+
+
+.navbar{
+    /* width: 5rem; */
+    /* height: 100vh; */
+    position: fixed;
+    background-color: #3f3145;
+    transition: width 200ms ease;
+    z-index: 3;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-items:center;
+    list-style: none;
+    height: 100%;
+}
+
+.navbar-item{
+    width: 100%;
+}
+
+.navbar-item:last-child{
+    margin-top: auto;
+}
+
+.navbar-link{
+    display: flex;
+    align-items: center;
+    justify-items:center;
+    height: 5rem;
+    color:gray;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.6);
+    transition: 600ms;
+}
+
+.navbar-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: #973045;
+    color: #FFFFFF;
+}
+
+.navbar-link img {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+}
+
+.icon{
+    height: 45px;
+    transform: scale(1.0);
+    transition: transform 200ms;
+}
+
+.logo{
+    font-weight:bold;
+    margin-bottom: 1rem;
+    text-align:center;
+    color:gray;
+    background: #973045;
+    font-size:1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+    width:100%;
+}
+
+.logo img{
+    transform: rotate(0deg);
+    transition: transform 400ms;
+}
+
+.logo .link-text{
+    color:white;
+}
+
+
+.navbar:hover .icon{
+    transform: scale(1.25);
+}
+
+.navbar:hover .logo img{
+    transform: rotate(-360deg);
+}
+
+
+/* navbar responsive PC*/
+@media only screen and (min-width: 600px){
+    .navbar{
+        top:0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover{
+        width:15rem;
+    }
+    .navbar:hover .link-text{
+        display: inline;
+        transition: opacity 200ms;
+    }
+
+    .grid_layout-item.medium{
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+    .grid_layout-item.large{
+        grid-row: span 3;
+        grid-column: span 3;
+    }
+
+    .grid_layout-item.tall{
+        grid-row: span 3 /auto;
+        grid-column: span 2;
+    }
+
+    .grid_layout-item.wide{
+        grid-row: span 2;
+        grid-column: span 3/auto;
+    }
+
+    .grid_layout-item.long{
+        grid-row: span 1;
+        grid-column: span 3/auto;
+    }
+}
+
+/* navbar responsive moviles*/
+@media only screen and (max-width: 600px){
+
+    .navbar{
+        bottom:0;
+        width:100vw;
+        height: 5rem;
+    }
+    .logo{
+        display: none;
+    }
+    .navbar-nav{
+        flex-direction: row;
+    }
+    .navbar-link{
+        justify-content:center;
+    }
+    .main_content{
+        margin:0;
+    }
+}
+
+/*codigo para grid layout*/
+.main_content{
+    margin-left: 5rem;
+    padding: 3rem;
+    flex: 1 1 80%;
+    height:100vh;
+}
+
+
+.grid_layout {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 10px;
+    grid-auto-rows: 250px;
+}
+
+.grid_layout-item{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-weight: bold;
+    border-radius:5px;
+    background: -webkit-linear-gradient(right,black, #010101);/*gradiente entre 2 colores*/
+    background-size: 100% 100%;/*100%100%:estira la imagen; contain:preserva aspect ratio; cover:reescala sin preservar aspectratio*/
+    background-position: center;
+    background-repeat: no-repeat;
+    /* overflow: hidden; */
+    /* width:100%; */
+    /* max-height: 100%; */
+    transition: all 400ms;
+}
+
+.show_image{
+    background-image:var(--image_url);
+}
+
+.grid_layout-item:hover{
+     transform: translateY(-3px) scale(1.1);
+}
+
+/* .grid_layout-item img{ */
+/*     max-width: 100%; */
+/*     height: 100%; */
+/* } */
+
+.grid_layout-item.small{
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.image-overlay{
+    display: flex;
+    direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    color: #FFFFFF;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.image-overlay:hover{
+    opacity: 1;
+}
+
+.image-overlay > *{
+    transform: translateY(50px);
+    transition: transform 250ms;
+}
+
+.image-overlay:hover > *{
+    transform: translateY(0);
+}
+
+/*Search Container */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    padding: 4em 0 4em 0 ;
+    width: 50%;
+}
+.search-container .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+
+
+form .search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    height: 0;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 8px;
+    transition: ease 500ms;
+    font-size: 16px;
+    text-align: center;
+}
+.search_icon{
+    padding: 0.5em;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    color:#353b48;
+    text-decoration:none;
+}
+
+.searchbar:hover > form .search-input{
+    width: 450px;
+    height: auto;
+    transition: ease 500ms;
+    margin-top: 8px;
+    border: none;
+}
+.searchbar:hover > form .search_icon{
+    color: white;
+    background-color: #353b48;
+    transition: ease 150ms;
+}
+
+
+
+/* codigo del footer */
+.footer{
+    display: flex;
+    margin-left: 5rem;
+    padding: 2.5rem;
+    position: relative;
+    bottom: 0;
+    background: -webkit-linear-gradient(left,#973045, #0a3045);/*gradiente entre 2 colores*/
+    border-radius:3px;
+    flex-basis: 50%;
+}
+.footer ul{
+    list-style: none;
+}
+
+.footer-left{
+    width:100%;
+}
+
+
+.footer-middle{
+    width:100%;
+}
+
+.footer-right{
+    width:100%;
+}

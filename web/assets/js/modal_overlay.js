@@ -11,6 +11,20 @@ const close_span = document.getElementById("close_span");
 close_span.onclick = function() {
     new_post_modal.classList.remove('modal_post-active');
 };
+
+//OVERLAY de elementos notifications
+const notification_buttom = document.getElementById("notification_buttom");
+const notification_modal = document.getElementById("notification_container");
+
+notification_buttom.addEventListener('click', function () {
+    notification_modal.classList.add('notification-active');//make visible
+    console.log('modal de notificaciones activo');
+});
+const notification_close = document.getElementById("close_notification");
+notification_close.onclick = function () {
+    notification_modal.classList.remove('notification-active');
+};
+
 //OVERlAY de modal_elements
 function modal_show(memeElement){
     // Get the modal
