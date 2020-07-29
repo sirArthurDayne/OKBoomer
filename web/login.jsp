@@ -33,7 +33,15 @@
     }
     else{
         //clean cookie
-        System.out.println("[-] Sad Life, no estas en la base de datos");
+        Cookie[] cookies_list = request.getCookies();
+        if (cookies_list != null){
+            for (Cookie cookie : cookies_list){
+                cookie.setMaxAge(0);
+                response.addCookie(cookie);
+                System.out.println("cookie borrada: "+ cookie.getName());
+            }
+        }
+        System.out.println("[-] No estas autorizado");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
         response.setHeader("Location", "index.jsp"); 
     }
