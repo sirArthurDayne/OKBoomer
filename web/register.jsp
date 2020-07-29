@@ -10,18 +10,21 @@
 <!DOCTYPE html>
 <%
     
+    String user_nickname= request.getParameter("new_name");
     String email= request.getParameter("new_email");
     String password = request.getParameter("new_password");
-    String avatar = request.getParameter("avatar");
+    String avatar = request.getParameter("avatar"); 
     
     //debug
+    System.out.println("[DBG]" + user_nickname);
     System.out.println("[DBG]" + email);
     System.out.println("[DBG]" + password);
     System.out.println("[DBG]" + avatar);
     //
     
     User new_user = new User();
-    new_user.setUser(email);
+    new_user.setUser(user_nickname);
+    new_user.setEmail(email);
     new_user.setPassword(password);
     new_user.setProfilePic(avatar);
     

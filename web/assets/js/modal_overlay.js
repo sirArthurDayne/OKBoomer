@@ -26,9 +26,9 @@ notification_close.onclick = function () {
 };
 
 //OVERlAY de modal_elements
+// Get the modal
+let modal = document.getElementById("myModal");
 function modal_show(memeElement){
-    // Get the modal
-    var modal = document.getElementById("myModal");
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
@@ -38,14 +38,18 @@ function modal_show(memeElement){
         captionText.innerHTML = memeElement.getElementsByTagName("p")[0].innerHTML;
     }
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
 }
+
+// Get the <span> element that closes the modal
+let span = document.getElementById("close_meme_button");
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+    console.log("clic en boton salir de meme element");
+}
+
+
+
 //Size de los items del grid variable con uso de un dado simple.
 meme_element = document.getElementById('meme');
 size_dice = Math.floor((Math.random() * 6) + 1);

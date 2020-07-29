@@ -53,28 +53,20 @@ public class ProcesosPost {
         return 0;
     }
     
-    public int NuevoPost(Post post, String user_name){
+    public int NuevoPost(Post post, int user_id){
         int resultado = 0;
         
         try{
-            ProcesosPost pPost = new ProcesosPost();
-            Statement stmt = conn.createStatement();
-            String query = "SELECT user_id FROM user where user_name = " + "'" + user_name + "'";
-            ResultSet result = stmt.executeQuery(query);
-        while(result.next()){                
-            //Set user_id inside post object
-            post.setAuthorID(result.getInt("user_id"));
+            ProcesosPost pPost = new ProcesosPost();            
+            post.setAuthorID(user_id);
             resultado = pPost.GuardarPost(post);
+            System.out.println("Nuevo Post Listo!");
             return resultado;
         }
-        result.close();
-        stmt.close();
-        conn.close();
-        }
         catch(Exception w){
-            System.out.println("Error al insertar: " + w);
+            System.out.println("Error al hacer nuevo post: " + w);
         }
-        
+
         return resultado;
     }
     
@@ -119,6 +111,47 @@ public class ProcesosPost {
         }
         return posts;
     }
+    public List<Post> ConsultarData(int user_id){
+        List<Post> posts = new ArrayList<Post>();
+        try{
+            Statement stmt = conn.createStatement();
+            String query = "SELECT * FROM post WHERE author_id = " + "'" + user_id + "'";
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                Post post = new Post();
+                /*
+                private int PostID;
+                private String Created_At;
+                private int AuthorID;
+                private String Title;
+                private String Description;
+                private String Image;
+                private int Likes;
+                */
+                
+                post.setPostID(result.getInt("post_id"));
+                post.setAuthorID(result.getInt("author_id"));
+                post.setTitle(result.getString("title"));
+                post.setDescription(result.getString("description"));
+                post.setImage(result.getString("image"));
+                post.setLikes(result.getInt("likes"));
+                post.setCreated_At(result.getString("created_at"));
+                
+                posts.add(post);
+                
+            }
+            
+            result.close();
+            stmt.close();
+            conn.close();
+            return posts;
+            
+        }catch(Exception e){
+            System.out.println("ERROR"+ e.getMessage().toString());
+        }
+        return posts;
+    }
+    
     
     
 }

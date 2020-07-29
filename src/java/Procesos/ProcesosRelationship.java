@@ -38,8 +38,8 @@ public class ProcesosRelationship {
         int resultado = 0;
         try{
             Statement smtm = conn.createStatement();
-            String query = "INSERT INTO relationships(action_user_1,action_user_2,approved)";
-                   query += "VALUES('"+relationship.getUser_Dom()+"','"+relationship.getUser_Sum()+"','"+relationship.getApproved()+"')";
+            String query = "INSERT INTO relationship(action_user_1,action_user_2,state)";
+                   query += "VALUES('"+relationship.getActor1()+"','"+relationship.getActor2()+"','"+relationship.getState()+"','"+relationship.getSince()+"','"+relationship.getCreated_At()+"')";
            
             resultado = smtm.executeUpdate(query);
             
@@ -56,23 +56,17 @@ public class ProcesosRelationship {
       
         try{
             Statement stmt = conn.createStatement();
-            String query = "SELECT * FROM stop";
+            String query = "SELECT * FROM relationship";
             ResultSet result = stmt.executeQuery(query);
             while(result.next()){
                 Relationship relationship = new Relationship();
-                /*
-                private String Created_At;
-                private int RelId;
-                private String User_Dom;
-                private String User_Sum;
-                private String Approved;
-                */
                 
-                relationship.setRelId(result.getInt("id"));
-                relationship.setUser_Dom(result.getString("action_user_1"));
-                relationship.setUser_Sum(result.getString("action_user_2"));
-                relationship.setApproved(result.getInt("approved"));
-                relationship.setCreated_At(result.getString("since"));
+                
+                relationship.setActor1(result.getInt("action_user_1"));
+                relationship.setActor2(result.getInt("action_user_2"));
+                relationship.setState(result.getInt("state"));
+                relationship.setSince(result.getString("since"));
+                relationship.setCreated_At(result.getString("created_at"));
 
                 
                 relationships.add(relationship);
@@ -88,5 +82,36 @@ public class ProcesosRelationship {
         }
         return relationships;
     }
+    
+    public int EnviarAmistad(Relationship relationship ){
+        int resultado = 0;
+        try{
+            Statement smtm = conn.createStatement();
+            String query = "INSERT INTO relationship(action_user_1,action_user_2,state)";
+                   query += "VALUES('"+relationship.getActor1()+"','"+relationship.getActor2()+"','"+relationship.getState()+"')";
+           
+            resultado = smtm.executeUpdate(query);
 
+            return resultado;
+        }
+        catch(Exception w){
+            System.out.println("Error al insertar: " + w);
+        }
+        return 0;
+    }
+    
+    public int EliminarAmistad(Relationship relationship ){
+        int resultado = 0;
+        try{
+            Statement smtm = conn.createStatement();
+            String query = "DELETE FROM relationship where action_user_1 = " + relationship.getActor1() + "and action_user_2 = " + relationship.getActor2() + "'";
+
+            resultado = smtm.executeUpdate(query);
+            return resultado;
+        }
+        catch(Exception w){
+            System.out.println("Error al insertar: " + w);
+        }
+        return 0;
+    }
 }

@@ -46,7 +46,7 @@
         </div>
     </div>
     <div id="myModal" class="modal">
-        <span class="close" id="close_span">&times;</span>
+        <span class="close" id="close_meme_button">&times;</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>

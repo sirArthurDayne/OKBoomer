@@ -41,8 +41,8 @@ public class ProcesosUser {
         int resultado = 0;
         try{
             Statement smtm = conn.createStatement();
-            String query = "INSERT INTO user(user_name,password,profile_picture)";
-                   query += "VALUES('"+user.getUser()+"','"+user.getPassword()+"','"+user.getProfilePic()+"')";
+            String query = "INSERT INTO user(user_name,email,password,profile_picture)";
+                   query += "VALUES('"+user.getUser()+"','"+user.getEmail()+"','"+user.getPassword()+"','"+user.getProfilePic()+"')";
            
             resultado = smtm.executeUpdate(query);
             
@@ -66,6 +66,7 @@ public class ProcesosUser {
                 
                 user.setUserID(result.getInt("user_id"));
                 user.setUser(result.getString("user_name"));
+                user.setEmail(result.getString("email"));
                 user.setPassword(result.getString("password"));
                 user.setProfilePic(result.getString("profile_picture"));
                 user.setCreated_At(result.getString("created_at"));
@@ -84,8 +85,35 @@ public class ProcesosUser {
         }
         return users;
     }
+    public User ConsultarData(int user_id){
+        User user = new User();
+        
+        try{
+            Statement stmt = conn.createStatement();
+            String query = "SELECT * FROM user WHERE user_id = '"+ user_id + "'" ;
+            ResultSet result = stmt.executeQuery(query);
+            result.first();
+            
+            user.setUserID(result.getInt("user_id"));
+            user.setUser(result.getString("user_name"));
+            user.setEmail(result.getString("email"));
+            user.setPassword(result.getString("password"));
+            user.setProfilePic(result.getString("profile_picture"));
+            user.setCreated_At(result.getString("created_at"));
+
+            result.close();
+            stmt.close();
+            conn.close();
+            
+            return user;
+        }
+        catch(Exception e){
+            System.out.println("ERROR de Consulta: "+e.getMessage().toString());
+        }
+        return user;
+    }
     
-    public boolean LoginUsuario(String usuario, String password){
+    public int LoginUsuario(String email, String password){
         
         boolean logged = false; 
         
@@ -96,31 +124,31 @@ public class ProcesosUser {
             while(result.next()){
                 User user = new User();
                 
-                user.setUser(result.getString("user_name"));
+                user.setUserID(result.getInt("user_id"));
+                user.setEmail(result.getString("email"));
                 user.setPassword(result.getString("password"));
                 
-                System.out.println("[+] " + user.getUser());
-                System.out.println("[+] " + user.getPassword());
+                System.out.println("[CMP DB] " + user.getEmail() + " [CMP POST] " + email + " Equal: " + email.equals(user.getEmail()));
+                System.out.println("[Query DB] " + user.getPassword()+ " [CMP POST] " + password + " Equal: " + password.equals(user.getPassword()));
                 
-                if(usuario.equals(user.getUser()) && password.equals(user.getPassword())){
-                    System.out.println("[+] Autentificado. Usuario: " + user.getUser());
+                if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
+                    System.out.println("[+] Autentificado. Usuario: " + user.getEmail() + " UserID: " + user.getUserID());
                     logged = true;
-                    result.close();
+                    
                     stmt.close();
-                    conn.close();
-                    return logged;
+                    return user.getUserID();
                 }
             }
-            result.close();
-            stmt.close();
-            conn.close();
             
-            return logged;
+            System.out.println("esta saliendo.");
+            
+            stmt.close();
+            return 0;
         }
         catch(Exception e){
             System.out.println("ERROR"+e.getMessage().toString());
         }
-        return logged;
+        return 0;
     }
     
     

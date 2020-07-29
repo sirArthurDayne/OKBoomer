@@ -13,7 +13,7 @@
         <span class="close" id="close_span">&times;</span>
         <h2>New Post Incoming!</h2>
         <%--TODO: MANDAR DATOS A LA BD--%>
-        <form method="POST" action="newpost.jsp">
+        <form class="form_flexbox" method="POST" action="newpost.jsp">
             <input class="modal_post-textbox" type="text" name="post_title" id="new_post_tittle" placeholder="titulo" required>
             <textarea class="modal_post-textarea"  rows="5" cols="50" placeholder="mi descripcion" name="descripcion"   id="song_description" required></textarea><br>
             <input class="modal_post-textbox" type="text" name="image" placeholder="Imagen(url)" side="50" id="song_image"required><br/>

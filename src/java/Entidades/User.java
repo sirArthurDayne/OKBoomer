@@ -10,9 +10,12 @@ package Entidades;
  * @author John
  */
 public class User {
+
+    
     
     private int UserID;
     private String User;
+    private String Email;
     private String Password;
     private String ProfilePic;
     private String Created_At;
@@ -87,6 +90,19 @@ public class User {
         this.Created_At = Created_At;
     }
     
+    /**
+     * @return the Email
+     */
+    public String getEmail() {
+        return Email;
+    }
+
+    /**
+     * @param Email the Email to set
+     */
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
     
     
 }

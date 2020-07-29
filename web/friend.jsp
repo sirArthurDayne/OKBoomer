@@ -1,48 +1,38 @@
 <%-- 
-    Document   : newpost
-    Created on : Jul 28, 2020, 1:38:06 PM
+    Document   : friend
+    Created on : Jul 28, 2020, 11:41:03 PM
     Author     : John
 --%>
 
-<%@page import="Procesos.ProcesosPost"%>
-<%@page import="Entidades.Post"%>
+<%@page import="Procesos.ProcesosRelationship"%>
+<%@page import="Entidades.Relationship"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    
-    String title = request.getParameter("post_title");
-    String description = request.getParameter("descripcion");
-    String image = request.getParameter("image");
-    
-    //debug
-    System.out.println("[DBG]" + title);
-    System.out.println("[DBG]" + description);
-    System.out.println("[DBG]" + image);
-    //
-    
     Cookie[] state_cookies = request.getCookies();
     
-    Post newPost = new Post();
-    //Check Later
-    //newPost.setTitle(state_cookies[2].getValue());
-    newPost.setTitle(title);
-    newPost.setDescription(description);
-    newPost.setImage(image);
+    String sender = state_cookies[1].getValue();
+    String receiver = request.getParameter("friend");
+    int state = 1;
+    //String image = request.getParameter("image");
     
-    System.out.println("[OBJ] User_id cookie: " + state_cookies[1].getValue());
-    System.out.println("[OBJ] Title: " + newPost.getTitle());
-    System.out.println("[OBJ] Description: " + newPost.getDescription());
-    System.out.println("[OBJ] Image: " + newPost.getImage());
+    //debug
+    System.out.println("[DBG]" + sender);
+    System.out.println("[DBG]" + receiver);
+    //System.out.println("[DBG]" + image);
     
-    //Nuevo Post
+    Relationship new_friendship = new Relationship();
     
+    new_friendship.setActor1(Integer.parseInt(sender));
+    new_friendship.setActor2(Integer.parseInt(receiver));
+    new_friendship.setState(state);
     
-    ProcesosPost pPost = new ProcesosPost();
-    int its_saved = pPost.NuevoPost(newPost, Integer.getInteger(state_cookies[1].getValue()));
+    ProcesosRelationship pFriends = new ProcesosRelationship();
+    
+    pFriends.EnviarAmistad(new_friendship);
 
-    if (its_saved != 0) System.out.println("[+] Nuevo post posteado en posts");
-    else System.out.println("[x] Algo salio mal. No se pudo guardar");
-    
-    response.setStatus(response.SC_MOVED_TEMPORARILY);
-    response.setHeader("Location", "home.jsp");
+        
+    //response.setStatus(response.SC_MOVED_TEMPORARILY);
+    //response.setHeader("Location", "profile.jsp");
     
     /*
     String email= request.getParameter("new_email");
@@ -53,7 +43,7 @@
     System.out.println("[DBG]" + email);
     System.out.println("[DBG]" + password);
     System.out.println("[DBG]" + avatar);
-    //
+    //ofici
     
     User new_user = new User();
     new_user.setUser(email);

@@ -1,4 +1,16 @@
 /*clase para new post modal*/
+.form_flexbox{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_flexbox > *{
+    margin-bottom: 5px;
+}
+
+
 .modal_post{
     background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
     display: flex;

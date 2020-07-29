@@ -39,6 +39,7 @@
                     <input type="file" name="avatar" id="avatar_file"  accept="image/gif, image/jpeg, image/png" >
                     <input type="hidden" name="new_email" value="<%= request.getParameter("new_email") %>" >
                     <input type="hidden" name="new_password" value="<%= request.getParameter("new_password") %>" >
+                    <input type="hidden" name="new_name" value="<%= request.getParameter("new_name") %>" >
                     <div class="image_preview" id="img_preview">
                         <img class="img_preview_image" id="avatar_img" alt="">
                     </div>

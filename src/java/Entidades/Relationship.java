@@ -10,13 +10,68 @@ package Entidades;
  * @author John
  */
 public class Relationship {
-
     
+    private int Actor1;
+    private int Actor2;
+    private int State;
+    private String Since;
     private String Created_At;
-    private int RelId;
-    private String User_Dom;
-    private String User_Sum;
-    private int Approved;
+    /**
+     * @return the Actor1
+     */
+    public int getActor1() {
+        return Actor1;
+    }
+
+    /**
+     * @param Actor1 the Actor1 to set
+     */
+    public void setActor1(int Actor1) {
+        this.Actor1 = Actor1;
+    }
+
+    /**
+     * @return the Actor2
+     */
+    public int getActor2() {
+        return Actor2;
+    }
+
+    /**
+     * @param Actor2 the Actor2 to set
+     */
+    public void setActor2(int Actor2) {
+        this.Actor2 = Actor2;
+    }
+
+    /**
+     * @return the State
+     */
+    public int getState() {
+        return State;
+    }
+
+    /**
+     * @param State the State to set
+     */
+    public void setState(int State) {
+        this.State = State;
+    }
+
+    /**
+     * @return the Since
+     */
+    public String getSince() {
+        return Since;
+    }
+
+    /**
+     * @param Since the Since to set
+     */
+    public void setSince(String Since) {
+        this.Since = Since;
+    }
+
     /**
      * @return the Created_At
      */
@@ -31,65 +86,6 @@ public class Relationship {
         this.Created_At = Created_At;
     }
 
-    /**
-     * @return the RelId
-     */
-    public int getRelId() {
-        return RelId;
-    }
-
-    /**
-     * @param RelId the RelId to set
-     */
-    public void setRelId(int RelId) {
-        this.RelId = RelId;
-    }
-
-    /**
-     * @return the User_Dom
-     */
-    public String getUser_Dom() {
-        return User_Dom;
-    }
-
-    /**
-     * @param User_Dom the User_Dom to set
-     */
-    public void setUser_Dom(String User_Dom) {
-        this.User_Dom = User_Dom;
-    }
-
-    /**
-     * @return the User_Sum
-     */
-    public String getUser_Sum() {
-        return User_Sum;
-    }
-
-    /**
-     * @param User_Sum the User_Sum to set
-     */
-    public void setUser_Sum(String User_Sum) {
-        this.User_Sum = User_Sum;
-    }
-
-    /**
-     * @return the Approved
-     */
-    public int getApproved() {
-        return Approved;
-    }
-
-    /**
-     * @param Approved the Approved to set
-     */
-    public void setApproved(int Approved) {
-        this.Approved = Approved;
-    }
-    
-    
-    
-    
     
     
 }
