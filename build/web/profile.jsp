@@ -29,18 +29,16 @@
         <%--modal de notificaciones--%>
         <%@include file="templates/notifications.jsp"%>
         <%
-            Cookie[] state_cookies = request.getCookies();
-            ProcesosPost pPost = new ProcesosPost();
+            ProcesosPost pPost = new ProcesosPost(  );
             ProcesosUser pUser = new ProcesosUser();
             
-            List<Post> posts = new ArrayList<Post>();
+            List<Post> posts = new ArrayList<>();
             User user = new User();
 
             
             //Renders Own profile or Another Users
             if(request.getParameterMap().containsKey("name"))
             {
-                
                 System.out.println("[+] ID Found:  "+ request.getParameter("name"));
                 user = pUser.ConsultarData(Integer.parseInt(request.getParameter("name")));
                 posts = pPost.ConsultarData(Integer.parseInt(request.getParameter("name")));
@@ -59,7 +57,7 @@
                 </div>
                 <div class="profile-user">
                     <h1 class="profile-user-name">@<%= user.getUser()  %></h1>
-                    <a href="EditarPerfil.html">
+                    <a href="EditarPerfil.jsp">
                         <buttom type="submit" id="edit_profile" name="edit_profile" class="profile-buttom">EditarPerfil</buttom>
                     </a>
                     <%--TODO:mandar request a traves de la BD, cambiar texto del boton cuando se de click --%>

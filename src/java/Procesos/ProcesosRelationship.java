@@ -83,6 +83,38 @@ public class ProcesosRelationship {
         return relationships;
     }
     
+    public List<Relationship> ConsultarData(int user_id){
+        List<Relationship> relationships = new ArrayList<Relationship>();
+      
+        try{
+            Statement stmt = conn.createStatement();
+            String query = "SELECT * FROM relationship WHERE action_user_1 != '" + user_id +"'";
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                Relationship relationship = new Relationship();
+                
+                
+                relationship.setActor1(result.getInt("action_user_1"));
+                relationship.setActor2(result.getInt("action_user_2"));
+                relationship.setState(result.getInt("state"));
+                relationship.setSince(result.getString("since"));
+                relationship.setCreated_At(result.getString("created_at"));
+
+                
+                relationships.add(relationship);
+            }
+            result.close();
+            stmt.close();
+            conn.close();
+            
+            return relationships;
+        }
+        catch(Exception e){
+            System.out.println("ERROR"+e.getMessage().toString());
+        }
+        return relationships;
+    }
+    
     public int EnviarAmistad(Relationship relationship ){
         int resultado = 0;
         try{
@@ -113,5 +145,35 @@ public class ProcesosRelationship {
             System.out.println("Error al insertar: " + w);
         }
         return 0;
+    }
+    public List<Relationship> SonFrenesDe(int user_id){
+        List<Relationship> relationships = new ArrayList<Relationship>();
+      
+        try{
+            Statement stmt = conn.createStatement();
+            String query = "select f1.* from relationship f1 inner join relationship f2 on f1.action_user_1 = f2.action_user_2 and  f1.action_user_2 = f2.action_user_1 WHERE f1.action_user_1 ="+ "'" + user_id +"'";
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                
+                Relationship relationship = new Relationship();
+
+                relationship.setActor1(result.getInt("action_user_1"));
+                relationship.setActor2(result.getInt("action_user_2"));
+                relationship.setState(result.getInt("state"));
+                relationship.setSince(result.getString("since"));
+                relationship.setCreated_At(result.getString("created_at"));
+
+                relationships.add(relationship);
+            }
+            result.close();
+            stmt.close();
+            conn.close();
+            
+            return relationships;
+        }
+        catch(Exception e){
+            System.out.println("ERROR"+e.getMessage().toString());
+        }
+        return relationships;
     }
 }

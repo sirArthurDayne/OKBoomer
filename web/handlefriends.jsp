@@ -1,6 +1,6 @@
 <%-- 
-    Document   : friend
-    Created on : Jul 28, 2020, 11:41:03 PM
+    Document   : handlefriends
+    Created on : Jul 29, 2020, 4:57:57 AM
     Author     : John
 --%>
 
@@ -8,52 +8,12 @@
 <%@page import="Entidades.Relationship"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    Cookie[] state_cookies = request.getCookies();
-    Relationship new_friendship = new Relationship();
-    
-    String sender = state_cookies[1].getValue();
-    String receiver = request.getParameter("friend");
-    int state = 1;
-    //String image = request.getParameter("image");
-    
-    //debug
-    System.out.println("[DBG]" + sender);
-    System.out.println("[DBG]" + receiver);
-    //System.out.println("[DBG]" + image);
-    
     if(request.getParameterMap().containsKey("action")){
-        
-        String action = request.getParameter("action");
-        if(action.equals("accept")){
-            new_friendship.setActor1(Integer.parseInt(sender));
-            new_friendship.setActor2(Integer.parseInt(receiver));
-            new_friendship.setState(state);
-
-            ProcesosRelationship pFriends = new ProcesosRelationship();
-
-            pFriends.EnviarAmistad(new_friendship);
-        }
-        else if(action.equals("reject")){
-            new_friendship.setActor2(Integer.parseInt(sender));
-            new_friendship.setActor1(Integer.parseInt(receiver));
-            new_friendship.setState(state);
-
-            ProcesosRelationship pFriends = new ProcesosRelationship();
-
-            pFriends.EliminarAmistad(new_friendship);
-            
-        }
+        else if{
+                }
     }
-    else{
     
-        new_friendship.setActor1(Integer.parseInt(sender));
-        new_friendship.setActor2(Integer.parseInt(receiver));
-        new_friendship.setState(state);
 
-        ProcesosRelationship pFriends = new ProcesosRelationship();
-
-        pFriends.EnviarAmistad(new_friendship);
-    }
         
     //response.setStatus(response.SC_MOVED_TEMPORARILY);
     //response.setHeader("Location", "profile.jsp");
